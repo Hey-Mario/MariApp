@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from '../Model/post';
+import { PostsService } from '../Services/posts.service';
 
 @Component({
   selector: 'app-actu',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./actu.component.css']
 })
 export class ActuComponent implements OnInit {
-
-  constructor() { }
+  posts: Post[] = [];
+  constructor(
+    private postService: PostsService,
+  ) { }
 
   ngOnInit(): void {
+    this.postService.getAllPostsList().subscribe(
+      (data) => {
+        this.posts = data.map(result => {return result})
+      }
+    )
   }
 
 }

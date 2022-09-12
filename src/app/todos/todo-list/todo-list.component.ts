@@ -14,7 +14,6 @@ export class TodoListComponent implements OnInit {
   todos: Todo[] = [];
   constructor(
     private activatedRoute: ActivatedRoute,
-    private userService: UsersService,
     private todoService: TodosService,
   ) { }
 
@@ -23,11 +22,9 @@ export class TodoListComponent implements OnInit {
       (params) => this.userId = params['id']
     )
     this.todoService.getMyTodoList(this.userId).subscribe(
-      // (data) => {
         (data) => {
           this.todos = data.map(results => {return results;})
         }
-      // }
     )
   }
 

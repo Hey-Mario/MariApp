@@ -9,7 +9,29 @@ import { UsersService } from './Services/users.service';
 })
 export class AppComponent {
   @Input () userId: number = 2;
-  user!: User;
+  user: User= {
+    id: 0,
+    name: '',
+    username: '',
+    email: '',
+    address: {
+      street: '',
+      suite: '',
+      city: '',
+      zipcode: 0,
+      geo: {
+        lat: 0,
+        lng: 0
+      }
+    },
+    phone: '',
+    website: '',
+    company: {
+      name: '',
+      catchPhrase: '',
+      bs: ''
+    }
+  };
   @Output() theUser= new EventEmitter;
   
   constructor(

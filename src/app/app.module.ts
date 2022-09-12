@@ -10,6 +10,8 @@ import { TodoListComponent } from './todos/todo-list/todo-list.component';
 import { ErrorComponent } from './error/error.component';
 import { ROUTING } from './app.routing';
 import { TodoItemComponent } from './todos/todo-item/todo-item.component';
+import { PostListComponent } from './posts/post-list/post-list.component';
+import { PostItemComponent } from './posts/post-item/post-item.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { TodoItemComponent } from './todos/todo-item/todo-item.component';
     TodoListComponent,
     ErrorComponent,
     TodoItemComponent,
+    PostListComponent,
+    PostItemComponent,
   ],
   imports: [
     BrowserModule,
