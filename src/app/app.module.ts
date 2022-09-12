@@ -6,9 +6,10 @@ import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ActuComponent } from './actu/actu.component';
 import { ProfilComponent } from './profil/profil.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoListComponent } from './todos/todo-list/todo-list.component';
 import { ErrorComponent } from './error/error.component';
 import { ROUTING } from './app.routing';
+import { TodoItemComponent } from './todos/todo-item/todo-item.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ROUTING } from './app.routing';
     ProfilComponent,
     TodoListComponent,
     ErrorComponent,
+    TodoItemComponent,
   ],
   imports: [
     BrowserModule,
