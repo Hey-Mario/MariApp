@@ -1,5 +1,5 @@
-export interface Users{
-    [x: string]: any
+export interface User{
+    // [x: string]: any
     "id": number,
     "name": string,
     "username": string,

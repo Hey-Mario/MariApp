@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Users } from '../Model/users';
+import { User } from '../Model/user';
 import { UsersService } from '../Services/users.service';
 
 @Component({
@@ -10,7 +10,30 @@ import { UsersService } from '../Services/users.service';
 })
 export class ProfilComponent implements OnInit {
 
-  user!: Users;
+  user: User = {
+    id: 0,
+    name: '',
+    username: '',
+    email: '',
+    address: {
+      street: '',
+      suite: '',
+      city: '',
+      zipcode: 0,
+      geo: {
+        lat: 0,
+        lng: 0
+      }
+    },
+    phone: '',
+    website: '',
+    company: {
+      name: '',
+      catchPhrase: '',
+      bs: ''
+    }
+  };
+
   constructor(
     private userService: UsersService,
     private activatedRoute: ActivatedRoute
