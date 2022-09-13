@@ -12,6 +12,9 @@ import { ROUTING } from './app.routing';
 import { TodoItemComponent } from './todos/todo-item/todo-item.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { PostItemComponent } from './posts/post-item/post-item.component';
+import { PostCommentsComponent } from './posts/post-comments/post-comments.component';
+import { CommentListComponent } from './comments/comment-list/comment-list.component';
+import { CommentItemComponent } from './comments/comment-item/comment-item.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { PostItemComponent } from './posts/post-item/post-item.component';
     TodoItemComponent,
     PostListComponent,
     PostItemComponent,
+    PostCommentsComponent,
+    CommentListComponent,
+    CommentItemComponent,
   ],
   imports: [
     BrowserModule,

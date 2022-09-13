@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Post } from 'src/app/Model/post';
 import { User } from 'src/app/Model/user';
 import { UsersService } from 'src/app/Services/users.service';
@@ -10,31 +11,10 @@ import { UsersService } from 'src/app/Services/users.service';
 })
 export class PostItemComponent implements OnInit {
   @Input() post!: Post;
-  user: User = {
-    id: 0,
-    name: '',
-    username: '',
-    email: '',
-    address: {
-      street: '',
-      suite: '',
-      city: '',
-      zipcode: 0,
-      geo: {
-        lat: 0,
-        lng: 0
-      }
-    },
-    phone: '',
-    website: '',
-    company: {
-      name: '',
-      catchPhrase: '',
-      bs: ''
-    }
-  };
+  @Input() user!: User;
   constructor(
     private userService: UsersService,
+    private route: Router
   ) { }
 
   ngOnInit(): void {
@@ -43,4 +23,11 @@ export class PostItemComponent implements OnInit {
     )
   }
 
+  goToPost(id: number){
+    // this.postId.emit(
+    //   this.post.id
+    // )
+    const link = ['posts/' + id + '/comments'];
+    this.route.navigate(link);
+  }
 }

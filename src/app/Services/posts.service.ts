@@ -21,4 +21,8 @@ export class PostsService {
   getAllPostsList(): Observable<Post[]>{
     return this.http.get<Post[]>(this.linkPosts);
   }
+
+  getPostById(id: number): Observable<Post>{
+    return this.http.get<Post>(this.linkPosts + id);
+  }
 }
