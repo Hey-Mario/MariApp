@@ -39,6 +39,7 @@ export class MainProfileComponent implements OnInit {
     private userService: UsersService,
     private activatedRoute: ActivatedRoute,
     private postService: PostsService,
+    
   ) { }
 
   ngOnInit(): void {
