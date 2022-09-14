@@ -52,8 +52,7 @@ export class ProfilComponent implements OnInit {
           (data) => this.posts = data.map(result => {return result})
         );
       }
-      })
-    // this.postService.getMyPostsList()
+    })
   }
 
 }

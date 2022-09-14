@@ -1,8 +1,11 @@
-Mon nom : {{ user['name'] }}
-<br> Mon email : {{ user['email'] }}
-<div class="display-4">
-    Mes récents posts:
-</div>
-<div>
-    <app-post-list [posts]="posts"></app-post-list>
+<div class="row">
+    <div class="col-lg-4">
+        <app-user-profile></app-user-profile>
+    </div>
+    <div class="col-lg-7">
+        <app-profile-navbar [user]="user"></app-profile-navbar>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
 </div>

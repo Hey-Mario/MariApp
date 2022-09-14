@@ -16,6 +16,12 @@ import { PostCommentsComponent } from './posts/post-comments/post-comments.compo
 import { CommentListComponent } from './comments/comment-list/comment-list.component';
 import { CommentItemComponent } from './comments/comment-item/comment-item.component';
 import { RandomizePipe } from './randomize.pipe';
+import { UserProfileComponent } from './profil/user-profile/user-profile.component';
+import { UserAlbumComponent } from './profil/user-album/user-album.component';
+import { UserPhotoComponent } from './profil/user-photo/user-photo.component';
+import { ProfileNavbarComponent } from './profil/profile-navbar/profile-navbar.component';
+import { UserPostComponent } from './profil/user-post/user-post.component';
+import { profileRouting } from './profile.routing';
 
 @NgModule({
   declarations: [
@@ -32,11 +38,17 @@ import { RandomizePipe } from './randomize.pipe';
     CommentListComponent,
     CommentItemComponent,
     RandomizePipe,
+    UserProfileComponent,
+    UserAlbumComponent,
+    UserPhotoComponent,
+    ProfileNavbarComponent,
+    UserPostComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    ROUTING
+    ROUTING,
+    profileRouting,
   ],
   providers: [],
   bootstrap: [AppComponent]
