@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { Post } from 'src/app/Model/post';
 import { User } from 'src/app/Model/user';
-import { PostsService } from 'src/app/Services/posts.service';
 import { UsersService } from 'src/app/Services/users.service';
 
 @Component({
@@ -34,12 +34,10 @@ export class MainProfileComponent implements OnInit {
       bs: ''
     }
   };
-
+  
   constructor(
     private userService: UsersService,
     private activatedRoute: ActivatedRoute,
-    private postService: PostsService,
-    
   ) { }
 
   ngOnInit(): void {

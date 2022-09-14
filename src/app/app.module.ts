@@ -21,6 +21,7 @@ import { UserPhotoComponent } from './pages/profil/user-photo/user-photo.compone
 import { ProfileNavbarComponent } from './pages/profil/profile-navbar/profile-navbar.component';
 import { UserPostComponent } from './pages/profil/user-post/user-post.component';
 import { MainProfileComponent } from './pages/profil/main-profile/main-profile.component';
+import { LoginComponent } from './directives/login/login.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { MainProfileComponent } from './pages/profil/main-profile/main-profile.c
     ProfileNavbarComponent,
     UserPostComponent,
     MainProfileComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
