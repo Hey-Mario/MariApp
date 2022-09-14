@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,6 @@ export class AuthenticationService {
 
   ) { }
   login(info: any){
-    this.http.post(this.link, info)
+    return this.http.post(this.link, info);
   }
 }

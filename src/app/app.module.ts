@@ -22,6 +22,7 @@ import { ProfileNavbarComponent } from './pages/profil/profile-navbar/profile-na
 import { UserPostComponent } from './pages/profil/user-post/user-post.component';
 import { MainProfileComponent } from './pages/profil/main-profile/main-profile.component';
 import { LoginComponent } from './directives/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { LoginComponent } from './directives/login/login.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     ROUTING,
   ],
   providers: [],

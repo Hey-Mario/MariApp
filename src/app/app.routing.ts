@@ -8,11 +8,13 @@ import { UserPostComponent } from './pages/profil/user-post/user-post.component'
 import { UserProfileComponent } from './pages/profil/user-profile/user-profile.component';
 import { TodoListComponent } from './pages/todos/todo-list/todo-list.component';
 import { MainProfileComponent } from './pages/profil/main-profile/main-profile.component';
+import { LoginComponent } from './directives/login/login.component';
 
 const APP_ROUTING: Routes = [
   // {path: '',component: AppComponent,
   //   children: [
-      { path: '', redirectTo:'actu', pathMatch:"full" },
+    { path: '', redirectTo:'actu', pathMatch:"full" },
+    { path: 'login', component: LoginComponent },
       { path: 'actu', component: ActuComponent },
       { path: 'posts/:id/comments', component: PostCommentsComponent },
       { path: 'todos/:id', component: TodoListComponent },
