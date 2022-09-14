@@ -15,6 +15,7 @@ import { PostItemComponent } from './posts/post-item/post-item.component';
 import { PostCommentsComponent } from './posts/post-comments/post-comments.component';
 import { CommentListComponent } from './comments/comment-list/comment-list.component';
 import { CommentItemComponent } from './comments/comment-item/comment-item.component';
+import { RandomizePipe } from './randomize.pipe';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CommentItemComponent } from './comments/comment-item/comment-item.compo
     PostCommentsComponent,
     CommentListComponent,
     CommentItemComponent,
+    RandomizePipe,
   ],
   imports: [
     BrowserModule,

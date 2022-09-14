@@ -10,8 +10,35 @@ import { UsersService } from 'src/app/Services/users.service';
   styleUrls: ['./post-item.component.css']
 })
 export class PostItemComponent implements OnInit {
-  @Input() post!: Post;
-  @Input() user!: User;
+  @Input() post: Post = {
+    userId: 0,
+    id: 0,
+    title: '',
+    body: ''
+  };
+  @Input() user: User = {
+    id: 0,
+    name: '',
+    username: '',
+    email: '',
+    address: {
+      street: '',
+      suite: '',
+      city: '',
+      zipcode: 0,
+      geo: {
+        lat: 0,
+        lng: 0
+      }
+    },
+    phone: '',
+    website: '',
+    company: {
+      name: '',
+      catchPhrase: '',
+      bs: ''
+    }
+  };
   constructor(
     private userService: UsersService,
     private route: Router
@@ -24,9 +51,6 @@ export class PostItemComponent implements OnInit {
   }
 
   goToPost(id: number){
-    // this.postId.emit(
-    //   this.post.id
-    // )
     const link = ['posts/' + id + '/comments'];
     this.route.navigate(link);
   }

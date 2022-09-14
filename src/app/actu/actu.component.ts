@@ -20,5 +20,4 @@ export class ActuComponent implements OnInit {
       }
     )
   }
-
 }

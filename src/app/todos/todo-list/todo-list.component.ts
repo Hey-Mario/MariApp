@@ -24,7 +24,7 @@ export class TodoListComponent implements OnInit {
     this.todoService.getMyTodoList(this.userId).subscribe(
         (data) => {
           this.todos = data.map(results => {return results;})
-        }
+      }
     )
   }
 

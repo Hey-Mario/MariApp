@@ -14,6 +14,7 @@ import { UsersService } from 'src/app/Services/users.service';
 })
 export class PostCommentsComponent implements OnInit {
   post!: Post;
+  postId!: number;
   comments: Comment[] = [];
   postMan!: User;
   constructor(
@@ -26,12 +27,12 @@ export class PostCommentsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       this.postService.getPostById(params['id']).subscribe((data) => {
-        this.post = data;
+        this.post! = data;
+        this.postId = data.id;
         this.userService.getUserById(data.userId).subscribe(
           (result) => this.postMan = result
         )
-      }),
-      this.commentService.getComments(params['id']).subscribe((data) => (this.comments = data.map((result) => result)));
+      })
     });
   }
 }
