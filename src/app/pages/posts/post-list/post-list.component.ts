@@ -9,11 +9,18 @@ import { UsersService } from 'src/app/Services/users.service';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
-
+  i = 10;
   @Input () posts: Post[] = [];
   constructor( ) { }
 
   ngOnInit(): void {
   }
 
+  showMorePost(){
+    this.i += 5
+  }
+
+  // getIndex(index: any){
+  //   this.i = index
+  // }
 }

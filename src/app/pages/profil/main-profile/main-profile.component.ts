@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Post } from '../Model/post';
-import { User } from '../Model/user';
-import { PostsService } from '../Services/posts.service';
-import { UsersService } from '../Services/users.service';
+import { Post } from 'src/app/Model/post';
+import { User } from 'src/app/Model/user';
+import { PostsService } from 'src/app/Services/posts.service';
+import { UsersService } from 'src/app/Services/users.service';
 
 @Component({
-  selector: 'app-profil',
-  templateUrl: './profil.component.html',
-  styleUrls: ['./profil.component.css']
+  selector: 'app-main-profile',
+  templateUrl: './main-profile.component.html',
+  styleUrls: ['./main-profile.component.css']
 })
-export class ProfilComponent implements OnInit {
-  posts: Post[] = [];
+export class MainProfileComponent implements OnInit {
   user: User = {
     id: 0,
     name: '',
@@ -47,12 +46,8 @@ export class ProfilComponent implements OnInit {
       next: (params) => {
         this.userService.getUserById(params['id']).subscribe(
           (data) => this.user = data
-        );
-        this.postService.getMyPostsList(params['id']).subscribe(
-          (data) => this.posts = data.map(result => {return result})
-        );
+        )
       }
     })
   }
-
 }

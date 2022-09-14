@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from '../Model/post';
-import { PostsService } from '../Services/posts.service';
+import { Post } from '../../Model/post';
+import { PostsService } from '../../Services/posts.service';
 
 @Component({
   selector: 'app-actu',

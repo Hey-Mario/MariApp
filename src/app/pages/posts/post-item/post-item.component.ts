@@ -39,6 +39,8 @@ export class PostItemComponent implements OnInit {
       bs: ''
     }
   };
+  @Input() i!: number;
+  @Output() index =  new EventEmitter; 
   constructor(
     private userService: UsersService,
     private route: Router
@@ -48,10 +50,15 @@ export class PostItemComponent implements OnInit {
     this.userService.getUserById(this.post.userId).subscribe(
         (data) => this.user = data
     )
+    // this.index.emit(this.i)
   }
 
   goToPost(id: number){
     const link = ['posts/' + id + '/comments'];
     this.route.navigate(link);
+  }
+
+  getIndex(){
+    this.index.emit(this.i)
   }
 }
