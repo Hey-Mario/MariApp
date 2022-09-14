@@ -1,2 +1,25 @@
-<p>user-album works!</p>
-<!-- liste album -->
+<div class="shadow p-3 mb-5 rounded">
+    <div class="row" *ngIf="precedent">
+        <div *ngFor="let album of albums | slice:0:6; index as i" class="col-lg-4 mb-3 album-item">
+            <div class="card text-bg-dark">
+                <img src="assets/img/Nomads.png" class="card-img" alt="background">
+                <div class="card-img-overlay">
+                    <p class="card-text">{{album.title}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="suivant">
+        <div *ngFor="let album of albums | slice:6:10; index as i" class="col-lg-4 mb-3">
+            <div class="card text-bg-dark">
+                <img src="assets/img/Cityscapes.png" class="card-img" alt="background">
+                <div class="card-img-overlay">
+                    <p class="card-title">{{album.title}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button class="btn btn-dark" (click)="goPrecedent()" [disabled]="precedent">Precedent</button>
+<button class="btn btn-dark" (click)="goSuivant()" [disabled]="suivant">Suivant</button>
+<br>

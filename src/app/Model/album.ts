@@ -1,4 +1,4 @@
-export interface album{
+export interface Album{
     "userId": number,
     "id": number,
     "title": string

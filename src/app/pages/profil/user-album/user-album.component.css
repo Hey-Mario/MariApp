@@ -1,0 +1,18 @@
+img {
+    filter: brightness(55%)
+}
+
+p {
+    line-break: auto;
+    text-transform: capitalize;
+}
+
+.album-item {
+    cursor: pointer;
+}
+
+
+/* .voir-photo {
+    display: grid;
+    place-items: center;
+} */
