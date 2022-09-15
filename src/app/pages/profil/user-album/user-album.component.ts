@@ -1,6 +1,6 @@
 import { NgForOf } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Album } from 'src/app/Model/album';
 import { Photo } from 'src/app/Model/photo';
@@ -16,15 +16,18 @@ export class UserAlbumComponent implements OnInit {
   photos: Photo[] = []
   precedent: boolean = true;
   suivant: boolean = false;
-  selectedAlbum = new BehaviorSubject<any>(null)
+  userId!: number;
+  selectedAlbum = new EventEmitter;
   constructor(
     private activatedRoute: ActivatedRoute,
-    private albumService: AlbumsService
+    private albumService: AlbumsService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
       this.activatedRoute.parent?.params.subscribe({
         next: (params) => {
+          this.userId = params['id'];
           this.albumService.getMyAlbumsList(params['id']).subscribe(
             (data) => {
               this.albums = data.map(result => {return result})
@@ -44,6 +47,8 @@ export class UserAlbumComponent implements OnInit {
   }
 
   goToPhotos(albumId: number){
-    this.selectedAlbum.next(albumId)
+    const link = ['profile/'+ this.userId +'/albums/' + albumId];
+    // this.selectedAlbum.emit(albumId);
+    this.router.navigate(link);
   }
 }

@@ -14,11 +14,11 @@ export class AlbumsService {
     private http: HttpClient,
   ) { }
 
-  getMyAlbumsList(id: number): Observable<Album[]>{
-    return this.http.get<Album[]>(this.linkUsers + id + '/albums');
+  getMyAlbumsList(idUser: number): Observable<Album[]>{
+    return this.http.get<Album[]>(this.linkUsers + idUser + '/albums');
   }
   
-  getAlbumById(id: number): Observable<Album>{
-    return this.http.get<Album>(this.linkAlbums + id);
+  getAlbumById(idAlbum: number): Observable<Album>{
+    return this.http.get<Album>(this.linkAlbums + idAlbum);
   }
 }

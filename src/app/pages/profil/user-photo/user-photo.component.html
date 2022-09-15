@@ -1,2 +1,36 @@
 <p>user-photo works!</p>
-<!-- liste photo -->
+<div class="shadow-sm p-3 mb-2 rounded">
+    <h3>Album :</h3>
+    {{album.title}}
+</div>
+
+<div class="shadow p-3 mb-5 rounded">
+    <h3>Photos :</h3>
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-3 photo-item">
+            <div class="card text-bg-dark">
+                <img src="assets/img/undraw_photo_re_5blb.svg" class="card-img p-4 m-auto" alt="Galerie Photo">
+                <!-- <div class="card-img-overlay"> -->
+                <p class="card-text text-center pb-2">Galerie Photo</p>
+                <!-- </div> -->
+            </div>
+        </div>
+        <div *ngFor="let photo of photos | slice:c:i" class="col-lg-3 col-md-4 col-sm-6 mb-3 photo-item">
+
+            <div class="card text-bg-dark">
+                <img src="{{photo.thumbnailUrl}}" class="card-img" alt="background">
+                <div class="card-img-overlay">
+                    <p class="card-text">{{photo.title}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <button (click)="preview()" [disabled]="c<=0" class="btn btn-dark btn-sm">Precedent</button>
+        </div>
+        <div class="col-lg-1 col-sm-2 offset-lg-8 offset-sm-7">
+            <button (click)="next()" [disabled]="i>=photos.length-1" class="btn btn-dark btn-sm">Next</button>
+        </div>
+    </div>
+</div>

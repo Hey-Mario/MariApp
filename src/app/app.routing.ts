@@ -9,6 +9,7 @@ import { UserProfileComponent } from './pages/profil/user-profile/user-profile.c
 import { TodoListComponent } from './pages/todos/todo-list/todo-list.component';
 import { MainProfileComponent } from './pages/profil/main-profile/main-profile.component';
 import { LoginComponent } from './directives/login/login.component';
+import { UserPhotoComponent } from './pages/profil/user-photo/user-photo.component';
 
 const APP_ROUTING: Routes = [
   // {path: '',component: AppComponent,
@@ -22,7 +23,8 @@ const APP_ROUTING: Routes = [
         children: [
           { path: '', redirectTo:'posts', pathMatch:"full" },
           { path: 'posts', component: UserPostComponent },
-          { path: 'photos', component: UserAlbumComponent },
+          { path: 'albums', component: UserAlbumComponent },
+          { path: 'albums/:id', component: UserPhotoComponent },
         ],
       },
     // ]},
