@@ -1,14 +1,14 @@
 import { Router, RouterModule, Routes } from '@angular/router';
-import { ActuComponent } from './pages/actu/actu.component';
+import { ActuComponent } from './main/pages/actu/actu.component';
 import { AppComponent } from './app.component';
 import { ErrorComponent } from './error/error.component';
-import { PostCommentsComponent } from './pages/posts/post-comments/post-comments.component';
-import { UserAlbumComponent } from './pages/profil/user-album/user-album.component';
-import { UserPostComponent } from './pages/profil/user-post/user-post.component';
-import { TodoListComponent } from './pages/todos/todo-list/todo-list.component';
-import { MainProfileComponent } from './pages/profil/main-profile/main-profile.component';
-import { LoginComponent } from './directives/login/login.component';
-import { UserPhotoComponent } from './pages/profil/user-photo/user-photo.component';
+import { PostCommentsComponent } from './main/pages/posts/post-comments/post-comments.component';
+import { UserAlbumComponent } from './main/pages/profil/user-album/user-album.component';
+import { UserPostComponent } from './main/pages/profil/user-post/user-post.component';
+import { TodoListComponent } from './main/pages/todos/todo-list/todo-list.component';
+import { MainProfileComponent } from './main/pages/profil/main-profile/main-profile.component';
+import { LoginComponent } from './account/login/login.component';
+import { UserPhotoComponent } from './main/pages/profil/user-photo/user-photo.component';
 
 const APP_ROUTING: Routes = [
   // {path: '',component: AppComponent,
