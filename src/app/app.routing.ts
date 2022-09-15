@@ -5,7 +5,6 @@ import { ErrorComponent } from './error/error.component';
 import { PostCommentsComponent } from './pages/posts/post-comments/post-comments.component';
 import { UserAlbumComponent } from './pages/profil/user-album/user-album.component';
 import { UserPostComponent } from './pages/profil/user-post/user-post.component';
-import { UserProfileComponent } from './pages/profil/user-profile/user-profile.component';
 import { TodoListComponent } from './pages/todos/todo-list/todo-list.component';
 import { MainProfileComponent } from './pages/profil/main-profile/main-profile.component';
 import { LoginComponent } from './directives/login/login.component';
