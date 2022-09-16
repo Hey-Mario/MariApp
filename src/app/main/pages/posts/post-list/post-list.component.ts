@@ -20,7 +20,4 @@ export class PostListComponent implements OnInit {
     this.i += 5
   }
 
-  // getIndex(index: any){
-  //   this.i = index
-  // }
 }

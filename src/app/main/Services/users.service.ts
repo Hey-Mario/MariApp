@@ -8,7 +8,7 @@ import { User } from '../Model/user';
   providedIn: 'root'
 })
 export class UsersService {
-  link = 'https://jsonplaceholder.typicode.com/users/';
+  link = 'http://localhost:3000/users/';
   // users: Users[] = [];
   constructor(
     private http:HttpClient,

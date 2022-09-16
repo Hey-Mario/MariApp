@@ -8,8 +8,8 @@ import { Album } from '../Model/album';
 })
 export class AlbumsService {
 
-  linkUsers = 'https://jsonplaceholder.typicode.com/users/';
-  linkAlbums = 'https://jsonplaceholder.typicode.com/albums/'
+  linkUsers = 'http://localhost:3000/users/';
+  linkAlbums = 'http://localhost:3000/albums/'
   constructor(
     private http: HttpClient,
   ) { }

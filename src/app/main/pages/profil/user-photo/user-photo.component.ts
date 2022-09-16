@@ -43,6 +43,7 @@ export class UserPhotoComponent implements OnInit {
       }
     )
   }
+
   preview(){
     this.i = this.c
     this.c -= 11

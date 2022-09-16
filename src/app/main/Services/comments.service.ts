@@ -7,7 +7,7 @@ import { Comment } from '../Model/comment';
   providedIn: 'root'
 })
 export class CommentsService {
-  link = 'https://jsonplaceholder.typicode.com/posts/'
+  link = 'http://localhost:3000/posts/'
   constructor(
     private http: HttpClient,
   ) { }

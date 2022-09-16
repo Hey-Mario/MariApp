@@ -8,8 +8,8 @@ import { Post } from '../Model/post';
 })
 export class PostsService {
   
-  linkUsers = 'https://jsonplaceholder.typicode.com/users/';
-  linkPosts = 'https://jsonplaceholder.typicode.com/posts/'
+  linkUsers = 'http://localhost:3000/users/';
+  linkPosts = 'http://localhost:3000/posts/'
   constructor(
     private http: HttpClient,
   ) { }

@@ -8,7 +8,7 @@ import { Photo } from '../Model/photo';
 })
 export class PhotoService {
 
-  link = 'https://jsonplaceholder.typicode.com/albums/'
+  link = 'http://localhost:3000/albums/'
   constructor(
     private http: HttpClient,
   ) { }

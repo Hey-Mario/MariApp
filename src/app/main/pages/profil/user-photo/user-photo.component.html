@@ -1,7 +1,6 @@
 <p>user-photo works!</p>
-<div class="shadow-sm p-3 mb-2 rounded">
-    <h3>Album :</h3>
-    {{album.title}}
+<div class="shadow-sm p-3 mb-2 rounded text-center">
+    <a [routerLink]="['/profile/' + album.userId + '/albums']" class="h5 text-dark text-reset">Album :</a> {{album.title | titlecase}}
 </div>
 
 <div class="shadow p-3 mb-5 rounded">
@@ -20,7 +19,7 @@
             <div class="card text-bg-dark">
                 <img src="{{photo.thumbnailUrl}}" class="card-img" alt="background">
                 <div class="card-img-overlay">
-                    <p class="card-text">{{photo.title}}</p>
+                    <p class="card-text">{{photo.title|slice:0:20}}...</p>
                 </div>
             </div>
         </div>
