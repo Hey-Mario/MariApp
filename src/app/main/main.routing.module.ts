@@ -11,14 +11,13 @@ import { LoginComponent } from '../account/login/login.component';
 import { UserPhotoComponent } from './pages/profil/user-photo/user-photo.component';
 
 const APP_ROUTING: Routes = [
-  // {path: '',component: AppComponent,
-  //   children: [
-    { path: '', redirectTo:'actu', pathMatch:"full" },
-    { path: 'login', component: LoginComponent },
-      { path: 'actu', component: ActuComponent },
-      { path: 'posts/:id/comments', component: PostCommentsComponent },
-      { path: 'todos/:id', component: TodoListComponent },
-      {path: 'profile/:id',component: MainProfileComponent,
+  { path: '',component: AppComponent,
+    children: [
+      { path: '', redirectTo:'actu', pathMatch:"full" },
+      { path: 'login', component: LoginComponent },
+        { path: 'actu', component: ActuComponent },
+        { path: 'todos/:id', component: TodoListComponent },
+        {path: 'profile/:id',component: MainProfileComponent,
         children: [
           { path: '', redirectTo:'posts', pathMatch:"full" },
           { path: 'posts', component: UserPostComponent },
@@ -26,7 +25,8 @@ const APP_ROUTING: Routes = [
           { path: 'albums/:id', component: UserPhotoComponent },
         ],
       },
-    // ]},
+      { path: 'posts/:id/comments', component: PostCommentsComponent },
+    ]},
   { path: '**', component: ErrorComponent },
 ];
 

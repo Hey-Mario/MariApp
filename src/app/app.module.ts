@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ActuComponent } from './main/pages/actu/actu.component';
 import { TodoListComponent } from './main/pages/todos/todo-list/todo-list.component';
 import { ErrorComponent } from './main/error/error.component';
-import { ROUTING } from './main/app.routing';
+import { ROUTING } from './main/main.routing.module';
 import { TodoItemComponent } from './main/pages/todos/todo-item/todo-item.component';
 import { PostListComponent } from './main/pages/posts/post-list/post-list.component';
 import { PostItemComponent } from './main/pages/posts/post-item/post-item.component';
