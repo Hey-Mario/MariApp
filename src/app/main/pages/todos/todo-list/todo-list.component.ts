@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Todo } from 'src/app/main/Model/todo';
 import { TodosService } from 'src/app/main/Services/todos.service';
-import { UsersService } from 'src/app/main/Services/users.service';
 
 @Component({
   selector: 'app-todo-list',

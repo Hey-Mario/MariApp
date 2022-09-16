@@ -2,8 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Todo } from '../Model/todo';
-import { User } from '../Model/user';
-import { UsersService } from './users.service';
 
 @Injectable({
   providedIn: 'root'

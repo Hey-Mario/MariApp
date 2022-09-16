@@ -1,7 +1,5 @@
-import { NgForOf } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
 import { Album } from 'src/app/main/Model/album';
 import { Photo } from 'src/app/main/Model/photo';
 import { AlbumsService } from 'src/app/main/Services/albums.service';

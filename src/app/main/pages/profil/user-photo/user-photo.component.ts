@@ -1,4 +1,3 @@
-import { NgForOf } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Album } from 'src/app/main/Model/album';

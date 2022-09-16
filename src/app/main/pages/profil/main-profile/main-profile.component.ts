@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
-import { Post } from 'src/app/main/Model/post';
 import { User } from 'src/app/main/Model/user';
 import { UsersService } from 'src/app/main/Services/users.service';
 
