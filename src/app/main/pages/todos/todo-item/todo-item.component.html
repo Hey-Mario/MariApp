@@ -1,3 +1,11 @@
 <li class="list-group-item">
-    <input type="checkbox" [checked]=todo.completed> {{ todo['title'] }}
+    <input type="checkbox" [checked]=todo.completed #inputCheckbox>
+    <label *ngIf="inputCheckbox.checked" class="text-decoration-line-through">
+        {{ todo.title }}
+    </label>
+    <label *ngIf="!inputCheckbox.checked">
+        {{ todo.title }}
+    </label>
 </li>
+
+<!-- <a href="" class="abs text-decoration-line-through"></a> -->

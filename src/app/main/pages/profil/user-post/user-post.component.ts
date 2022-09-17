@@ -20,7 +20,9 @@ export class UserPostComponent implements OnInit {
     this.activatedRoute.parent?.params.subscribe({
         next: (params) => {
           this.subscription = this.postService.getMyPostsList(params['id']).subscribe(
-            (data) => this.posts = data.map(result => {return result})
+            (data) => {
+              this.posts = data.map(result => {return result})
+            }
           );
         }
       })

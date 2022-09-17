@@ -45,6 +45,7 @@ import { FormsModule } from '@angular/forms';
     UserPostComponent,
     MainProfileComponent,
     LoginComponent,
+
   ],
   imports: [
     BrowserModule,

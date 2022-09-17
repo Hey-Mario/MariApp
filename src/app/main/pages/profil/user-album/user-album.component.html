@@ -1,7 +1,7 @@
 <div class="shadow p-3 mb-5 rounded">
     <div class="row" *ngIf="precedent">
         <div *ngFor="let album of albums | slice:0:6; index as i" class="col-lg-4 mb-3 album-item" (click)="goToPhotos(album.id)">
-            <div class="card text-bg-dark">
+            <div class="card text-bg-dark myalbum">
                 <img src="assets/img/Nomads.png" class="card-img" alt="background">
                 <div class="card-img-overlay">
                     <p class="card-text">{{album.title}}</p>
@@ -20,6 +20,6 @@
         </div>
     </div>
 </div>
-<button class="btn btn-dark" (click)="goPrecedent()" [disabled]="precedent">Precedent</button>
-<button class="btn btn-dark" (click)="goSuivant()" [disabled]="suivant">Suivant</button>
+<button class="btn btn-dark" (click)="goPrecedent()" [disabled]="precedent">Preview</button>
+<button class="btn btn-dark" (click)="goSuivant()" [disabled]="suivant">Next</button>
 <br>

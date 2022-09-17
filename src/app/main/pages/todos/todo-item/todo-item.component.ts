@@ -8,9 +8,9 @@ import { Todo } from 'src/app/main/Model/todo';
 })
 export class TodoItemComponent implements OnInit {
   @Input () todo!: Todo;
+  @Input() checked!: boolean;
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

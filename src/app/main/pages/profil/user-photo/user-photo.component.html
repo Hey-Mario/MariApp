@@ -1,6 +1,6 @@
 <p>user-photo works!</p>
 <div class="shadow-sm p-3 mb-2 rounded text-center">
-    <a [routerLink]="['/profile/' + album.userId + '/albums']" class="h5 text-dark text-reset">Album :</a> {{album.title | titlecase}}
+    <a [routerLink]="['/profile/' + album.userId + '/albums']" class="h5 text-dark text-decoration-none">Album :</a> {{album.title | titlecase}}
 </div>
 
 <div class="shadow p-3 mb-5 rounded">
@@ -26,7 +26,7 @@
     </div>
     <div class="row">
         <div class="col-3">
-            <button (click)="preview()" [disabled]="c<=0" class="btn btn-dark btn-sm">Precedent</button>
+            <button (click)="preview()" [disabled]="c<=0" class="btn btn-dark btn-sm">Preview</button>
         </div>
         <div class="col-lg-1 col-sm-2 offset-lg-8 offset-sm-7">
             <button (click)="next()" [disabled]="i>=photos.length-1" class="btn btn-dark btn-sm">Next</button>

@@ -21,13 +21,9 @@ export class PostListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.postService.getAllPostsList().subscribe(
-      (data) => {
-        this.posts = data.map( result => {return result}),
-        randomize(this.posts)
-        // console.log(data)
-      }
-    )
+    // if(!this.posts){
+      
+    // }
     const source = interval(1000);
     this.subscription = source.subscribe(val => console.log(val));
   }
