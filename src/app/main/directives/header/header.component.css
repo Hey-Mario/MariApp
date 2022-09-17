@@ -1,0 +1,9 @@
+a i {
+    transition: 1s;
+}
+
+a:hover i {
+    position: relative;
+    bottom: 4px;
+    transition: 1s;
+}

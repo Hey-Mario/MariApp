@@ -10,8 +10,8 @@
         </div>
     </div>
     <div class="row" *ngIf="suivant">
-        <div *ngFor="let album of albums | slice:6:10; index as i" class="col-lg-4 mb-3" (click)="goToPhotos(album.id)">
-            <div class="card text-bg-dark">
+        <div *ngFor="let album of albums | slice:6:10; index as i" class="col-lg-4 mb-3 album-item" (click)="goToPhotos(album.id)">
+            <div class="card text-bg-dark myalbum">
                 <img src="assets/img/Cityscapes.png" class="card-img" alt="background">
                 <div class="card-img-overlay">
                     <p class="card-title">{{album.title}}</p>
@@ -19,7 +19,9 @@
             </div>
         </div>
     </div>
+    <div class="d-flex justify-content-between">
+        <button class="btn btn-dark" (click)="goPrecedent()" [disabled]="precedent">Preview</button>
+        <button class="btn btn-dark" (click)="goSuivant()" [disabled]="suivant">Next</button>
+    </div>
 </div>
-<button class="btn btn-dark" (click)="goPrecedent()" [disabled]="precedent">Preview</button>
-<button class="btn btn-dark" (click)="goSuivant()" [disabled]="suivant">Next</button>
 <br>

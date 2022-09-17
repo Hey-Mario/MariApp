@@ -6,10 +6,6 @@
     height: auto;
 } */
 
-.profile {
-    position: fixed;
-}
-
 .pictures {
     overflow: hidden;
 }
@@ -37,4 +33,10 @@ h5 {
 
 details {
     line-height: 10px;
+}
+
+@media (min-width:1200px) {
+    .profile {
+        position: fixed;
+    }
 }
