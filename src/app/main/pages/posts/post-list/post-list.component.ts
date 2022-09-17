@@ -1,5 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { interval, Observable } from 'rxjs';
+import { randomize } from 'src/app/functions/randomize.function';
 import { Post } from 'src/app/main/Model/post';
+import { RandomizePipe } from 'src/app/main/pipes/randomize.pipe';
+import { PostsService } from 'src/app/main/Services/posts.service';
 
 @Component({
   selector: 'app-post-list',
@@ -7,15 +11,31 @@ import { Post } from 'src/app/main/Model/post';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
-  i = 10;
-  @Input () posts: Post[] = [];
-  constructor( ) { }
+
+  @Input() posts: Post[] = [];
+  subscription : any;
+  observer = new Observable
+  i: number = 10;
+  constructor(
+    private postService: PostsService
+  ) { }
 
   ngOnInit(): void {
+    this.postService.getAllPostsList().subscribe(
+      (data) => {
+        this.posts = data.map( result => {return result}),
+        randomize(this.posts)
+        // console.log(data)
+      }
+    )
+    const source = interval(1000);
+    this.subscription = source.subscribe(val => console.log(val));
+  }
+  ngOnDestroy(){
+    this.subscription.unsubscribe()
   }
 
-  showMorePost(){
-    this.i += 5
+  showMorePost() {
+    this.i += 5;
   }
-
 }

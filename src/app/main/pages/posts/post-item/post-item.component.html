@@ -1,10 +1,24 @@
-<div class="card">
+<div class="card my-4 mycard col-lg-6 col-xll-6 offset-lg-3 col-md-10 offset-md-1">
     <div class="card-header">
-        {{ user['name'] }}
+        <div class="row">
+            <div class="col-sm-2">
+                <img src="assets/img/user1.svg" alt="user's picture">
+            </div>
+            <div class="col-sm-10">
+                <div class="">
+                    {{ user.name }} ({{user.username}})
+                </div>
+                <div>
+                    <a href="mailto: {{ user.email }} ">{{ user.email }}</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="card-body">
-        <h5 class="card-title">{{ post.title }}</h5>
+    <div class="card-body p-4">
+        <h5 class="card-title">{{ post.title|titlecase }}</h5>
         <p class="card-text">{{ post.body }}</p>
-        <button class="btn btn-primary" (click)="goToPost(post.id)">Show comments</button>
+    </div>
+    <div class="row px-4">
+        <button class="btn btn-primary" (click)="goToPost(post.id)"> <i class="fa-thin fa-comments"></i> Show comments</button>
     </div>
 </div>

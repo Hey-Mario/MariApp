@@ -10,19 +10,23 @@ import { PostsService } from 'src/app/main/Services/posts.service';
 })
 export class UserPostComponent implements OnInit {
   posts: Post[] = []
+  subscription: any;
   constructor(
     private activatedRoute: ActivatedRoute,
     private postService: PostsService
   ) { }
 
   ngOnInit(): void {
-      this.activatedRoute.parent?.params.subscribe({
+    this.activatedRoute.parent?.params.subscribe({
         next: (params) => {
-          this.postService.getMyPostsList(params['id']).subscribe(
+          this.subscription = this.postService.getMyPostsList(params['id']).subscribe(
             (data) => this.posts = data.map(result => {return result})
           );
         }
       })
+  }
+  ngOnDestroy(){
+    this.subscription.unsubscribe()
   }
 
 }

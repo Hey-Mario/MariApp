@@ -13,14 +13,20 @@ export class CommentListComponent implements OnInit {
 
   @Input() postId!: number;
   comments: Comment[] = [];
+  subscription: any;
   constructor(
     private commentService: CommentsService,
   ) { }
 
   ngOnInit(): void {
-    this.commentService.getComments(this.postId).subscribe(
+    // console.log("post id : " + this.postId)
+    this.subscription = this.commentService.getComments(this.postId).subscribe(
       (data) => this.comments = data.map(result => result)
     )
+
   }
 
+  ngOnDestroy(){
+    this.subscription.unsubscribe()
+  }
 }

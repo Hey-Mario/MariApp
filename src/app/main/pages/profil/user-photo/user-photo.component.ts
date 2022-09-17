@@ -20,6 +20,7 @@ export class UserPhotoComponent implements OnInit {
   };
   c: number = 0;
   i: number = 11;
+  subscription: any;
   constructor(
     private activatedRoute: ActivatedRoute,
     private photoService: PhotoService,
@@ -27,7 +28,7 @@ export class UserPhotoComponent implements OnInit {
   ) { }
   
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(
+    this.subscription = this.activatedRoute.params.subscribe(
       (params)=> {
         this.photoService.getPhotos(params['id']).subscribe({
           next: (data) => {
@@ -41,6 +42,10 @@ export class UserPhotoComponent implements OnInit {
         })
       }
     )
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe()
   }
 
   preview(){

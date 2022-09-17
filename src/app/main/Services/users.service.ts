@@ -16,18 +16,18 @@ export class UsersService {
 
   }
 
-  users$ = ajax.getJSON(this.link);
-  subscribe = this.users$.subscribe({
-    next: (data) => {return data},
-    error: (err) => console.log(err)
-  })
+  // users$ = ajax.getJSON(this.link);
+  // subscribe = this.users$.subscribe({
+  //   next: (data) => {return data},
+  //   error: (err) => console.log(err)
+  // })
 
   getUsers(): Observable<User[]>{
     return this.http.get<User[]>(this.link);
   }
 
-  getUserById(id: number): Observable<User>{
-    return this.http.get<User>(this.link + id)
+  getUserById(userId: number): Observable<User>{
+    return this.http.get<User>(this.link + userId)
   }
 
   // getUserByEmail(email: string): Observable<User>{

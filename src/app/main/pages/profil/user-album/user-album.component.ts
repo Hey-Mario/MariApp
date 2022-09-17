@@ -16,6 +16,7 @@ export class UserAlbumComponent implements OnInit {
   suivant: boolean = false;
   userId!: number;
   selectedAlbum = new EventEmitter;
+  subscription: any;
   constructor(
     private activatedRoute: ActivatedRoute,
     private albumService: AlbumsService,
@@ -23,7 +24,7 @@ export class UserAlbumComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-      this.activatedRoute.parent?.params.subscribe({
+    this.subscription = this.activatedRoute.parent?.params.subscribe({
         next: (params) => {
           this.userId = params['id'];
           this.albumService.getMyAlbumsList(params['id']).subscribe(
@@ -35,6 +36,10 @@ export class UserAlbumComponent implements OnInit {
       })
   }
 
+  ngOnDestroy(){
+    this.subscription.unsubscribe()
+  }
+  
   goPrecedent(){
     this.precedent = !this.precedent
     this.suivant = !this.suivant

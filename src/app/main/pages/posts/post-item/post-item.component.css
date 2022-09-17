@@ -1,0 +1,19 @@
+img {
+    width: 50px;
+    height: 50px;
+}
+
+.mycard:hover {
+    box-shadow: 8px 8px 16px -3px rgba(0, 0, 0, 0.53);
+    -webkit-box-shadow: 8px 8px 16px -3px rgba(0, 0, 0, 0.53);
+    -moz-box-shadow: 8px 8px 16px -3px rgba(0, 0, 0, 0.53);
+    transition: 0.5s;
+    border: none;
+    /* cursor: pointer; */
+}
+
+
+/* 
+button {
+    width: max-content;
+} */

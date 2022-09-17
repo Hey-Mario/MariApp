@@ -10,13 +10,14 @@ import { UsersService } from 'src/app/main/Services/users.service';
   styleUrls: ['./post-item.component.css']
 })
 export class PostItemComponent implements OnInit {
+  // userId!: number
   @Input() post: Post = {
     userId: 0,
     id: 0,
     title: '',
     body: ''
   };
-  @Input() user: User = {
+  user: User = {
     id: 0,
     name: '',
     username: '',
@@ -41,16 +42,22 @@ export class PostItemComponent implements OnInit {
   };
   @Input() i!: number;
   @Output() index =  new EventEmitter; 
+  subscription: any;
   constructor(
     private userService: UsersService,
     private route: Router
   ) { }
 
   ngOnInit(): void {
-    this.userService.getUserById(this.post.userId).subscribe(
-        (data) => this.user = data
-    )
-    // this.index.emit(this.i)
+    this.subscription = this.userService.getUserById(this.post.userId).subscribe({
+      next: (response) => this.user = response,
+      error: (e) =>  console.log(e),
+      complete: ()=> console.log("c'est fait")
+    })
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe()
   }
 
   goToPost(id: number){
@@ -58,7 +65,7 @@ export class PostItemComponent implements OnInit {
     this.route.navigate(link);
   }
 
-  getIndex(){
-    this.index.emit(this.i)
-  }
+  // getIndex(){
+  //   this.index.emit(this.i)
+  // }
 }

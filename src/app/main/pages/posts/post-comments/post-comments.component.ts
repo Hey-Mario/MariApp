@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs';
 import { Comment } from 'src/app/main/Model/comment';
 import { Post } from 'src/app/main/Model/post';
 import { User } from 'src/app/main/Model/user';
@@ -13,26 +14,33 @@ import { UsersService } from 'src/app/main/Services/users.service';
   styleUrls: ['./post-comments.component.css'],
 })
 export class PostCommentsComponent implements OnInit {
-  post!: Post;
+  post: Post = {
+    userId: 0,
+    id: 0,
+    title: '',
+    body: ''
+  };
+  subscriptionPost: any;
   postId!: number;
-  comments: Comment[] = [];
-  postMan!: User;
   constructor(
-    private commentService: CommentsService,
     private activatedRoute: ActivatedRoute,
     private postService: PostsService,
-    private userService: UsersService
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params) => {
-      this.postService.getPostById(params['id']).subscribe((data) => {
-        this.post! = data;
-        this.postId = data.id;
-        this.userService.getUserById(data.userId).subscribe(
-          (result) => this.postMan = result
-        )
-      })
-    });
+    this.activatedRoute.params.subscribe(
+      (params) => this.postId = params['id']
+    )
+    this.subscriptionPost = this.postService.getPostById(this.postId).subscribe(
+       data => {
+        this.post = data
+      }
+    )
+    console.log(this.post)
+
+    console.log('the post id: ' + this.postId);
+  }
+  ngOnDestroy(){
+    this.subscriptionPost.unsubscribe()
   }
 }

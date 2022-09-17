@@ -32,6 +32,7 @@ export class MainProfileComponent implements OnInit {
       bs: ''
     }
   };
+  subscription: any;
   
   constructor(
     private userService: UsersService,
@@ -39,12 +40,15 @@ export class MainProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe({
+    this.subscription = this.activatedRoute.params.subscribe({
       next: (params) => {
         this.userService.getUserById(params['id']).subscribe(
           (data) => this.user = data
         )
       }
     })
+  }
+  ngOnDestroy(){
+    this.subscription.unsubscribe()
   }
 }
