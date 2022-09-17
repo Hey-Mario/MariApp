@@ -1,5 +1,5 @@
-<li class="list-group-item">
-    <input type="checkbox" [checked]=todo.completed #inputCheckbox>
+<li class="list-group-item py-3">
+    <input type="checkbox" [checked]=todo.completed #inputCheckbox class="mx-2">
     <label *ngIf="inputCheckbox.checked" class="text-decoration-line-through">
         {{ todo.title }}
     </label>

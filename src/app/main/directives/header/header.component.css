@@ -1,5 +1,9 @@
-a i {
+/* a i {
     transition: 1s;
+} */
+
+a {
+    color: white;
 }
 
 a:hover i {
@@ -8,11 +12,21 @@ a:hover i {
 }
 
 .navbar-brand {
-    color: rgb(155, 8, 8);
+    font-size: x-large;
+    color: #FEE715FF;
+}
+
+nav {
+    /* background-color: #317773; */
+    /* background-color: #FEE715FF; */
+    background-color: #00539CFF;
 }
 
 ul .active {
-    color: blue;
+    /* color: #00539CFF; */
+    /* color: #E2D1F9; */
+    /* color: #5800cc; */
+    color: #E2D1F9;
 }
 
 nav {
