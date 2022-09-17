@@ -6,6 +6,11 @@
     height: auto;
 } */
 
+
+/* .profile {
+    min-width: 350px;
+} */
+
 .pictures {
     overflow: hidden;
 }
@@ -27,7 +32,7 @@ h5 {
 }
 
 .informations {
-    font-size: 17px;
+    /* font-size: 17px; */
     line-height: 30px;
 }
 

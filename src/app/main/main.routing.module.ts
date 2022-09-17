@@ -10,7 +10,7 @@ import { MainProfileComponent } from './pages/profil/main-profile/main-profile.c
 import { LoginComponent } from '../account/login/login.component';
 import { UserPhotoComponent } from './pages/profil/user-photo/user-photo.component';
 
-const APP_ROUTING: Routes = [
+const MAIN_ROUTING: Routes = [
   // { path: '', component: AppComponent,
   //   children: [
       { path: '', redirectTo:'actu', pathMatch:"full" },
@@ -31,4 +31,4 @@ const APP_ROUTING: Routes = [
   { path: '**', component: ErrorComponent },
 ];
 
-export const ROUTING = RouterModule.forRoot(APP_ROUTING);
+export const MAINROUTING = RouterModule.forChild(MAIN_ROUTING);

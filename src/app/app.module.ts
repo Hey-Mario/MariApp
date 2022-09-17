@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ActuComponent } from './main/pages/actu/actu.component';
 import { TodoListComponent } from './main/pages/todos/todo-list/todo-list.component';
 import { ErrorComponent } from './main/error/error.component';
-import { ROUTING } from './main/main.routing.module';
 import { TodoItemComponent } from './main/pages/todos/todo-item/todo-item.component';
 import { PostListComponent } from './main/pages/posts/post-list/post-list.component';
 import { PostItemComponent } from './main/pages/posts/post-item/post-item.component';
@@ -23,6 +22,7 @@ import { UserPostComponent } from './main/pages/profil/user-post/user-post.compo
 import { MainProfileComponent } from './main/pages/profil/main-profile/main-profile.component';
 import { LoginComponent } from './account/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { ROUTING } from './app.routing.module';
 
 @NgModule({
   declarations: [
@@ -51,7 +51,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ROUTING,
+    ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]
