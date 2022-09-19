@@ -14,7 +14,7 @@ const MAIN_ROUTING: Routes = [
   // { path: '', component: AppComponent,
   //   children: [
       { path: '', redirectTo:'actu', pathMatch:"full" },
-      { path: 'login', component: LoginComponent },
+      // { path: 'login', component: LoginComponent },
       { path: 'actu', component: ActuComponent },
       { path: 'todos/:id', component: TodoListComponent },
       {path: 'profile/:id',component: MainProfileComponent,

@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   login(formulaire: NgForm){
     this.authentificationService.login(formulaire).subscribe(
       (response) => {

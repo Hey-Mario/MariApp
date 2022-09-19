@@ -8,6 +8,7 @@ import { UsersService } from './main/Services/users.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title = 'Angulapp';
   @Input () userId: number = 2;
   user: User= {
     id: 0,
