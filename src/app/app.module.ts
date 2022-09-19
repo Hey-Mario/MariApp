@@ -23,6 +23,8 @@ import { MainProfileComponent } from './main/pages/profil/main-profile/main-prof
 import { LoginComponent } from './account/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ROUTING } from './app.routing.module';
+import { CommonModule } from '@angular/common';
+import { QueryComponent } from './main/pages/query/query.component';
 
 @NgModule({
   declarations: [
@@ -45,13 +47,14 @@ import { ROUTING } from './app.routing.module';
     UserPostComponent,
     MainProfileComponent,
     LoginComponent,
-
+    QueryComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ROUTING
+    ROUTING,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

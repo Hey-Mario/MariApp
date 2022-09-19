@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +8,23 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input () userId!: number;
-  constructor(
-  ) { }
+  @Output() msgQuery = new EventEmitter
+  visibility = false;
 
-  ngOnInit(): void {
+  constructor(
+    private router: Router
+    ) { }
+
+  ngOnInit(  ): void {
   }
 
+  search(query: string){
+    const link = ['search/' + query]
+    this.msgQuery.emit(query)
+    this.router.navigate(link)
+  }
+
+  show(){
+    this.visibility = !this.visibility;
+  }
 }
