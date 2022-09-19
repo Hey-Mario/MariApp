@@ -1,4 +1,4 @@
-<div class="shadow p-3 mb-5 rounded">
+<div class="shadow p-3 mb-5 rounded bg-white">
     <div class="row" *ngIf="precedent">
         <div *ngFor="let album of albums | slice:0:6; index as i" class="col-lg-4 mb-3 album-item" (click)="goToPhotos(album.id)">
             <div class="card text-bg-dark myalbum">

@@ -49,16 +49,12 @@ export class PostItemComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.subscription = this.userService.getUserById(this.post.userId).subscribe({
-      next: (response) => this.user = response,
-      error: (e) =>  console.log(e),
-      complete: ()=> console.log("c'est fait")
-    })
+    this.userService.getUserById(this.post.userId).then(
+      (response) => this.user = response
+    )
   }
 
-  ngOnDestroy(){
-    this.subscription.unsubscribe()
-  }
+  
 
   goToPost(id: number){
     const link = ['posts/' + id + '/comments'];

@@ -19,7 +19,7 @@ export class UserPostComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.parent?.params.subscribe({
         next: (params) => {
-          this.subscription = this.postService.getMyPostsList(params['id']).subscribe(
+          this.postService.getMyPostsList(params['id']).then(
             (data) => {
               this.posts = data.map(result => {return result})
             }
@@ -27,8 +27,4 @@ export class UserPostComponent implements OnInit {
         }
       })
   }
-  ngOnDestroy(){
-    this.subscription.unsubscribe()
-  }
-
 }

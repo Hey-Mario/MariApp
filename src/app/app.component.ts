@@ -38,7 +38,7 @@ export class AppComponent {
   constructor(
     private userService: UsersService,
   ){
-    this.userService.getUserById(this.userId).subscribe(
+    this.userService.getUserById(this.userId).then(
       (data) => {
         this.user = data;
       }

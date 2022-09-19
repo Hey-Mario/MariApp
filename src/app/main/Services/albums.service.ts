@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { lastValueFrom, Observable } from 'rxjs';
 import { Album } from '../Model/album';
 
 @Injectable({
@@ -14,11 +14,11 @@ export class AlbumsService {
     private http: HttpClient,
   ) { }
 
-  getMyAlbumsList(idUser: number): Observable<Album[]>{
-    return this.http.get<Album[]>(this.linkUsers + idUser + '/albums');
+  getMyAlbumsList(idUser: number): Promise<Album[]>{
+    return lastValueFrom(this.http.get<Album[]>(this.linkUsers + idUser + '/albums'));
   }
   
-  getAlbumById(idAlbum: number): Observable<Album>{
-    return this.http.get<Album>(this.linkAlbums + idAlbum);
+  getAlbumById(idAlbum: number): Promise<Album>{
+    return lastValueFrom(this.http.get<Album>(this.linkAlbums + idAlbum));
   }
 }

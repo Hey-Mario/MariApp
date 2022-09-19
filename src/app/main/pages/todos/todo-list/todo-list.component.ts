@@ -20,11 +20,13 @@ export class TodoListComponent implements OnInit {
     this.activatedRoute.params.subscribe(
       (params) => this.userId = params['id']
     )
-    this.todoService.getMyTodoList(this.userId).subscribe(
-        (data) => {
-          this.todos = data.map(results => {return results;})
-      }
+
+
+    this.todoService.getMyTodoList(this.userId).then(
+      (data) => {
+              this.todos = data.map(results => {return results;})
+          }
     )
   }
-
+  
 }

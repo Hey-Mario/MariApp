@@ -9,14 +9,14 @@ import { AuthenticationService } from 'src/app/main/Services/authentication.serv
 })
 export class LoginComponent implements OnInit {
   token: any;
-
+  
   constructor(
     private authentificationService: AuthenticationService,
   ) { }
 
   ngOnInit(): void {
   }
-  
+
   login(formulaire: NgForm){
     this.authentificationService.login(formulaire).subscribe(
       (response) => {

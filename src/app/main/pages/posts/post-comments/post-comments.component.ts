@@ -31,7 +31,7 @@ export class PostCommentsComponent implements OnInit {
     this.activatedRoute.params.subscribe(
       (params) => this.postId = params['id']
     )
-    this.subscriptionPost = this.postService.getPostById(this.postId).subscribe(
+    this.subscriptionPost = this.postService.getPostById(this.postId).then(
        data => {
         this.post = data
       }

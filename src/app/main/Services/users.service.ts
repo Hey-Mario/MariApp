@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { lastValueFrom, Observable } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
 import { User } from '../Model/user';
 
@@ -22,12 +22,12 @@ export class UsersService {
   //   error: (err) => console.log(err)
   // })
 
-  getUsers(): Observable<User[]>{
-    return this.http.get<User[]>(this.link);
+  getUsers(): Promise<User[]>{
+    return lastValueFrom(this.http.get<User[]>(this.link));
   }
 
-  getUserById(userId: number): Observable<User>{
-    return this.http.get<User>(this.link + userId)
+  getUserById(userId: number): Promise<User>{
+    return lastValueFrom(this.http.get<User>(this.link + userId));
   }
 
   // getUserByEmail(email: string): Observable<User>{

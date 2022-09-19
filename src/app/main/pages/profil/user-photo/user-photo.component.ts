@@ -28,25 +28,23 @@ export class UserPhotoComponent implements OnInit {
   ) { }
   
   ngOnInit(): void {
-    this.subscription = this.activatedRoute.params.subscribe(
+    this.activatedRoute.params.subscribe(
       (params)=> {
-        this.photoService.getPhotos(params['id']).subscribe({
-          next: (data) => {
+        this.photoService.getPhotos(params['id']).then(
+            (data) => {
             this.photos = data.map((result)=> result)
           }
-        }),
-        this.albumService.getAlbumById(params['id']).subscribe({
-          next: (data) => {
+        ),
+        this.albumService.getAlbumById(params['id']).then(
+            (data) => {
             this.album = data
           }
-        })
+        )
       }
     )
   }
 
-  ngOnDestroy(){
-    this.subscription.unsubscribe()
-  }
+  
 
   preview(){
     this.i = this.c

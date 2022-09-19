@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { lastValueFrom, Observable } from 'rxjs';
 import { Photo } from '../Model/photo';
 
 @Injectable({
@@ -13,8 +13,8 @@ export class PhotoService {
     private http: HttpClient,
   ) { }
 
-  getPhotos(albumId: number): Observable<Photo[]>{
-    return this.http.get<Photo[]>(this.link + albumId + '/photos');
+  getPhotos(albumId: number): Promise<Photo[]>{
+    return lastValueFrom(this.http.get<Photo[]>(this.link + albumId + '/photos'));
   }
   
 }

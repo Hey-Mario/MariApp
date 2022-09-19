@@ -13,23 +13,15 @@ import { PostsService } from 'src/app/main/Services/posts.service';
 export class PostListComponent implements OnInit {
 
   @Input() posts: Post[] = [];
-  subscription : any;
-  observer = new Observable
   i: number = 10;
   constructor(
-    private postService: PostsService
   ) { }
 
   ngOnInit(): void {
-    // if(!this.posts){
-      
-    // }
-    const source = interval(1000);
-    this.subscription = source.subscribe(val => console.log(val));
+    // const source = interval(1000);
+    // source.subscribe(val => console.log(val));
   }
-  ngOnDestroy(){
-    this.subscription.unsubscribe()
-  }
+
 
   showMorePost() {
     this.i += 5;

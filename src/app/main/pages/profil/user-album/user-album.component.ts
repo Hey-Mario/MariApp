@@ -24,10 +24,10 @@ export class UserAlbumComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.subscription = this.activatedRoute.parent?.params.subscribe({
+    this.activatedRoute.parent?.params.subscribe({
         next: (params) => {
           this.userId = params['id'];
-          this.albumService.getMyAlbumsList(params['id']).subscribe(
+          this.albumService.getMyAlbumsList(params['id']).then(
             (data) => {
               this.albums = data.map(result => {return result})
             }
@@ -36,9 +36,7 @@ export class UserAlbumComponent implements OnInit {
       })
   }
 
-  ngOnDestroy(){
-    this.subscription.unsubscribe()
-  }
+  
   
   goPrecedent(){
     this.precedent = !this.precedent

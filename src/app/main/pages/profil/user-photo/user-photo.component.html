@@ -1,9 +1,8 @@
-<p>user-photo works!</p>
-<div class="shadow-sm p-3 mb-2 rounded text-center">
+<div class="shadow-sm p-3 mb-2 rounded text-center bg-white">
     <a [routerLink]="['/profile/' + album.userId + '/albums']" class="h5 text-dark text-decoration-none">Album :</a> {{album.title | titlecase}}
 </div>
 
-<div class="shadow p-3 mb-5 rounded">
+<div class="shadow p-3 mb-5 rounded bg-white">
     <h3>Photos :</h3>
     <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-6 mb-3 photo-item">

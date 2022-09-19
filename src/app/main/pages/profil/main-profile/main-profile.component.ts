@@ -40,15 +40,13 @@ export class MainProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.subscription = this.activatedRoute.params.subscribe({
+    this.activatedRoute.params.subscribe({
       next: (params) => {
-        this.userService.getUserById(params['id']).subscribe(
+        this.userService.getUserById(params['id']).then(
           (data) => this.user = data
         )
       }
     })
   }
-  ngOnDestroy(){
-    this.subscription.unsubscribe()
-  }
+  
 }

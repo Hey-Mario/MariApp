@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { lastValueFrom, Observable } from 'rxjs';
 import { Post } from '../Model/post';
 
 @Injectable({
@@ -14,15 +14,15 @@ export class PostsService {
     private http: HttpClient,
   ) { }
 
-  getMyPostsList(id: number): Observable<Post[]>{
-    return this.http.get<Post[]>(this.linkUsers + id + '/posts');
+  getMyPostsList(id: number): Promise<Post[]>{
+    return lastValueFrom(this.http.get<Post[]>(this.linkUsers + id + '/posts'));
   }
 
-  getAllPostsList(): Observable<Post[]>{
-    return this.http.get<Post[]>(this.linkPosts);
+  getAllPostsList(): Promise<Post[]>{
+    return lastValueFrom(this.http.get<Post[]>(this.linkPosts));
   }
 
-  getPostById(id: number): Observable<Post>{
-    return this.http.get<Post>(this.linkPosts + id);
+  getPostById(id: number): Promise<Post>{
+    return lastValueFrom(this.http.get<Post>(this.linkPosts + id));
   }
 }

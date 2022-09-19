@@ -14,12 +14,13 @@ import { PostsService } from '../../../main/Services/posts.service';
 // @AutoUnsub()
 export class ActuComponent implements OnInit {
   posts: Post[] = [];
+  subscription : any;
   constructor(
     private postService: PostsService
   ) { }
 
   ngOnInit(): void {
-    this.postService.getAllPostsList().subscribe(
+    this.postService.getAllPostsList().then(
       (data) => {
         this.posts = data.map( result => {return result}),
         randomize(this.posts)
@@ -27,5 +28,7 @@ export class ActuComponent implements OnInit {
       }
     )
   }
+
+  
   
 }
