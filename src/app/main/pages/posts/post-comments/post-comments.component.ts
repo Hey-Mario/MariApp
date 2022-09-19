@@ -20,27 +20,39 @@ export class PostCommentsComponent implements OnInit {
     title: '',
     body: ''
   };
-  subscriptionPost: any;
+
+
+  user!: User;
+  
   postId!: number;
   constructor(
     private activatedRoute: ActivatedRoute,
     private postService: PostsService,
+    private userService: UsersService
   ) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(
       (params) => this.postId = params['id']
     )
-    this.subscriptionPost = this.postService.getPostById(this.postId).then(
-       data => {
-        this.post = data
+    this.postService.getPostById(this.postId).then(
+       dataPost => {
+        this.post = dataPost,
+        this.userService.getUserById(dataPost.userId).then(
+          (dataUSer) => this.user = dataUSer
+        )
       }
     )
-    console.log(this.post)
 
-    console.log('the post id: ' + this.postId);
+    // console.log(this.post.id)
+    // console.log(this.user)
   }
-  ngOnDestroy(){
-    this.subscriptionPost.unsubscribe()
-  }
+
+  // getEmittedUser($event: any){
+  //   // this.user = $emitted
+  //   // console.log('the user : ' + this.user)
+  //   console.log('The emitted :' + $event)
+  // }
+  
+
 }

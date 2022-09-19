@@ -10,14 +10,13 @@ import { UsersService } from 'src/app/main/Services/users.service';
   styleUrls: ['./post-item.component.css']
 })
 export class PostItemComponent implements OnInit {
-  // userId!: number
   @Input() post: Post = {
     userId: 0,
     id: 0,
     title: '',
     body: ''
   };
-  user: User = {
+  @Input() user: User = {
     id: 0,
     name: '',
     username: '',
@@ -41,7 +40,6 @@ export class PostItemComponent implements OnInit {
     }
   };
   @Input() i!: number;
-  @Output() index =  new EventEmitter; 
   subscription: any;
   constructor(
     private userService: UsersService,
@@ -51,9 +49,12 @@ export class PostItemComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getUserById(this.post.userId).then(
       (response) => this.user = response
-    )
+    ).catch(err => console.log(err))
   }
 
+  // ngOnAfterView(){
+
+  // }
   
 
   goToPost(id: number){
