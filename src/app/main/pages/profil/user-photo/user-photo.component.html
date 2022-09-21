@@ -15,7 +15,7 @@
         </div>
         <div *ngFor="let photo of photos | slice:c:i" class="col-lg-3 col-md-4 col-sm-6 mb-3 photo-item">
 
-            <div class="card text-bg-dark">
+            <div class="card text-bg-dark" data-aos="zoom-in">
                 <img src="{{photo.thumbnailUrl}}" class="card-img" alt="background">
                 <div class="card-img-overlay">
                     <p class="card-text">{{photo.title|slice:0:20}}...</p>
