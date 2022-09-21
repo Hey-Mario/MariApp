@@ -1,13 +1,14 @@
 .photo-item {
     cursor: pointer;
+    transition: .5s;
 }
 
 .photo-item:hover {
-    transform: rotate(2deg) scale(1.05);
+    transform: scale(1.1);
     transition: all .5s ease-in-out;
     /* transform: ; */
 }
 
 .photo-item:active {
-    transform: rotateX(50deg);
+    transform: rotateX(15deg);
 }
