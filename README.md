@@ -1,4 +1,4 @@
-# AngulApp
+# AngulApp(in development ...)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
 
@@ -25,3 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![image](https://user-images.githubusercontent.com/105484902/191129252-734885e8-54db-42a9-a551-2e4c8a7194d1.png)
+![image](https://user-images.githubusercontent.com/105484902/191129289-fccb6303-99c3-43b3-bbac-661bc4a94492.png)
+![image](https://user-images.githubusercontent.com/105484902/191129487-019d4a75-6f6b-4dac-9840-f071ea65dd52.png)
+![image](https://user-images.githubusercontent.com/105484902/191129543-2296cbe7-8e05-4292-a124-ff54209a8504.png)
