@@ -29,7 +29,9 @@ export class PostCommentsComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private postService: PostsService,
     private userService: UsersService
-  ) {}
+  ) {
+    
+  }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(

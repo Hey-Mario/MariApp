@@ -20,6 +20,7 @@ export class PostListComponent implements OnInit {
   ngOnInit(): void {
     // const source = interval(1000);
     // source.subscribe(val => console.log(val));
+
   }
 
 

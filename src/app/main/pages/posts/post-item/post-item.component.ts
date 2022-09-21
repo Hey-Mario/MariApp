@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Post } from 'src/app/main/Model/post';
 import { User } from 'src/app/main/Model/user';
@@ -55,7 +55,6 @@ export class PostItemComponent implements OnInit {
   // ngOnAfterView(){
 
   // }
-  
 
   goToPost(id: number){
     const link = ['posts/' + id + '/comments'];

@@ -16,7 +16,7 @@ export class TodosService {
   // getMyTodoList(id: number): Observable<Todo[]>{
   //   return this.http.get<Todo[]>(this.link + id + '/todos');
   // }
-  getMyTodoList(id: number): Promise<Todo[]>{
-    return lastValueFrom(this.http.get<Todo[]>(this.link + id + '/todos'));
+  getMyTodoList(id: number): Observable<Todo[]>{
+    return this.http.get<Todo[]>(this.link + id + '/todos');
   }
 }
