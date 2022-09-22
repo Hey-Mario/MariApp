@@ -1,4 +1,14 @@
-.box {
-    width: 150px;
-    height: 150px;
+/* img {
+    box-shadow: 1px 1px 1px px black 1px;
+} */
+
+h1 {
+    letter-spacing: 15px;
+    font-weight: light;
+}
+
+.all {
+    /* height: 80%; */
+    margin-top: 5%;
+    /* margin-bottom: 10%; */
 }
